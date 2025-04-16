@@ -2,49 +2,145 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>AvatarFX</title>
     <link rel="stylesheet" href="static/css/bulma.min.css">
-    <style>
-        body {
-            background-color: #121212;
-            color: #f0f0f0;
-            font-family: 'Google Sans', sans-serif;
-            padding: 20px;
-        }
+    <link rel="stylesheet" href="static/css/index.css">
+  <meta charset="UTF-8">
+  <title>AvatarFX</title>
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <style>
+    body {
+      background-color: #121212;
+      color: #f0f0f0;
+      font-family: 'Google Sans', sans-serif;
+      padding: 20px;
+    }
 
-        .section-title {
-            text-align: center;
-            font-size: 1.7em;
-            margin: 30px 0;
-            font-weight: bold;
-        }
+    /* 1. Big, centered title with gradient + glow */
+    .avatar-title {
+      font-size: 4rem;
+      text-align: center;
+      margin-bottom: 0.5em;
+      /* gradient text */
+      background: linear-gradient(45deg, #8a2be2, #00ffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      /* glow */
+      text-shadow:
+        0 0 8px rgba(138, 43, 226, 0.8),
+        0 0 16px rgba(0, 255, 255, 0.6);
+    }
 
-        .video-row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 40px;
-        }
+    /* 2. Author block styling */
+    .authors {
+      text-align: center;
+      line-height: 1.4;
+      font-size: 1.1rem;
+      margin-bottom: 1.5em;
+    }
 
-        .video-container video {
-            height: 480px;
-            width: auto;
-            max-width: 100%;
-            border-radius: 10px;
-            background: black;
-        }
+    .authors sup {
+      font-size: 0.8em;
+      color: #999;
+    }
 
-        .featured-video {
-            height: 500px;
-        }
-    </style>
+    .affiliations {
+      display: block;
+      margin-top: 0.5em;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    /* 3. Link‑button row */
+    .links {
+      text-align: center;
+      margin-bottom: 2em;
+    }
+
+    .links .button {
+      margin: 0 0.5em;
+    }
+
+    /* keep existing section titles and video grid */
+    .section-title {
+      text-align: center;
+      font-size: 1.7em;
+      margin: 30px 0;
+      font-weight: bold;
+    }
+
+    .video-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .video-container video {
+      height: 400px;
+      width: auto;
+      max-width: 100%;
+      border-radius: 10px;
+      background: black;
+    }
+
+    .featured-video {
+      height: 500px;
+    }
+  </style>
 </head>
 
 
 <body>
     <h1 class="avatar-title">Avatar FX</h1>
+
+    <!-- Updated, left‑aligned author list with accent colors on role titles -->
+    <div class="authors">
+        <p><strong>Project Lead:</strong>
+          <a href="https://linkedin.com/in/weimin-wang-will"
+             target="_blank" rel="noopener">Weimin Wang</a>
+        </p>
+        <p><strong>Modeling:</strong>
+          <a href="javascript:void(0)">Chetwin Low</a>,
+          <a href="https://linkedin.com/in/weimin-wang-will"
+             target="_blank" rel="noopener">Weimin Wang</a>
+        </p>
+        <p><strong>Data:</strong>
+          <a href="javascript:void(0)">Nat Roth</a>,
+          <a href="javascript:void(0)">Diego De La Torre</a>,
+          <a href="javascript:void(0)">Michal Wolski</a>
+        </p>
+        <p><strong>Deployment & Infra:</strong>
+          <a href="javascript:void(0)">Yi Cui</a>,
+          <a href="javascript:void(0)">Amog Kamsetty</a>,
+          <a href="javascript:void(0)">Meng Zhu</a>
+        </p>
+        <p><strong>Front End:</strong>
+          <a href="javascript:void(0)">Ryder Donahue</a>
+        </p>
+        <p><strong>Back End:</strong>
+          <a href="javascript:void(0)">Lanyin Zhang</a>
+        </p>
+        <p><strong>Design:</strong>
+          <a href="javascript:void(0)">Evan</a>,
+          <a href="javascript:void(0)">Devin Mancuso</a>
+        </p>
+        <p><strong>TnS:</strong>
+          <a href="javascript:void(0)">Bojiang Jin</a>
+        </p>
+      </div>
+    </div>
+
+
+        <!-- 3. Placeholder buttons -->
+    <div class="links">
+        <a class="button is-dark is-outlined" href="https://video.c.ai " role="button">Start Here </a>
+    </div>
+
+    <!-- Introductory text -->
+    <section class="intro" style="max-width:800px;margin:1.5em auto;line-height:1.6;">
+        <p>Avatar FX is a novel AI‑powered platform for interactive storytelling that lets users upload an image and choose a voice to instantly animate characters—speaking, moving, and expressing emotions with unprecedented realism. At its core is our state‑of‑the‑art DiT‑based diffusion video generation model, trained on a curated dataset and enhanced with innovative distillation and inference techniques to deliver high‑quality, temporally coherent videos at rapid speeds, even for extended sequences.</p>
+    </section>
 
     <!-- Featured Video -->
     <div class="section-title">Long, consistent video</div>
