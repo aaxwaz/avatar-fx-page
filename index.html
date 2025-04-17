@@ -156,6 +156,12 @@
         width: 100%;
         max-width: 800px;
       }
+      .video-filename {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--muted-text);
+      margin-bottom: 0.5em;
+    }
     </style>
   </head>
 
@@ -504,5 +510,21 @@
         </video>
       </div>
     </div>
-  </body>
+
+    
+
+      <script>
+    // for each .video-container, grab its <source> path, extract the filename, and insert a label
+    document.querySelectorAll('.video-container').forEach(container => {
+      const src = container.querySelector('video source')?.getAttribute('src') || '';
+      const filename = src.split('/').pop() || '';
+      if (filename) {
+        const label = document.createElement('div');
+        label.className = 'video-filename';
+        label.textContent = filename;
+        container.insertBefore(label, container.firstChild);
+      }
+    });
+  </script>
+</body>
 </html>
