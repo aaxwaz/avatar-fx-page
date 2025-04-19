@@ -3,16 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <title>AvatarFX</title>
-    <!-- <link rel="stylesheet" href="static/css/bulma.min.css" /> -->
-    <!-- <link rel="stylesheet" href="static/css/index.css" /> -->
-    <link rel="stylesheet" href="static/css/bulma.min.css" />
-    <link rel="stylesheet" href="static/css/index.css" />
     <style>
       :root {
         --gradient-start: #eb99ff;
         --gradient-mid: #8550ff;
         --gradient-end: #8db9e4;
-        --bg-dark: #181818;
+        --bg-dark: #131316;
         --card-bg: #1a1a1d;
         --text-color: #eaeaea;
         --muted-text: #999;
@@ -32,6 +28,14 @@
         font-family: "Inter", "Segoe UI", sans-serif;
         font-size: 16px;
         line-height: 1.6;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 64px;
+        padding-left: 128px;
+        padding-right: 128px;
+        text-align: center;
+        gap: 24px;
       }
 
       @keyframes gradientShift {
@@ -61,10 +65,7 @@
       }
 
       .authors {
-        max-width: 800px;
-        margin: 0 auto 3em;
         text-align: left;
-        padding: 0 1em;
       }
 
       .authors p {
@@ -72,14 +73,10 @@
       }
 
       .authors strong {
-        color: var(--accent);
+        color: #a2a2ac;
+        font-weight: 400;
         display: inline-block;
         width: 160px;
-      }
-
-      .authors a {
-        color: #b5cfff;
-        text-decoration: none;
       }
 
       .authors a:hover {
@@ -118,12 +115,10 @@
         padding: 0 1em;
       }
 
-      .section-title {
+      .video-section {
         font-size: 1.6rem;
-        font-weight: 700;
+        font-weight: 200;
         text-align: center;
-        margin: 2.5em 0 1.2em;
-        color: var(--accent);
       }
 
       .video-row {
@@ -134,23 +129,8 @@
         padding: 0 1em;
       }
 
-      .video-container {
-        background: var(--card-bg);
-        border-radius: var(--radius);
-        padding: 8px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        transition: transform 0.3s ease;
-        height: fit-content;
-      }
-
-      .video-container:hover {
-        transform: scale(1.02);
-      }
-
       .video-container video {
         border-radius: var(--radius);
-        width: 100%;
-        height: auto;
       }
 
       .featured-video {
@@ -159,11 +139,105 @@
         max-width: 800px;
       }
       .video-filename {
-      text-align: center;
-      font-size: 0.9rem;
-      color: var(--muted-text);
-      margin-bottom: 0.5em;
-    }
+        text-align: center;
+        font-size: 0.9rem;
+        color: var(--muted-text);
+        margin-bottom: 0.5em;
+      }
+
+      .container {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 60px 20px;
+        text-align: center;
+      }
+
+      /* Typography */
+      .brand {
+        font-weight: bold;
+        font-size: 1rem;
+        color: #ffffff;
+        opacity: 0.85;
+      }
+
+      .title {
+        background: linear-gradient(90deg, #d183ff, #7f8fff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text; /* Fallback */
+        font-size: 48px;
+        font-weight: 400;
+      }
+
+      .subtitle,
+      .description {
+        font-size: 1rem;
+        color: #fff;
+        margin-bottom: 20px;
+        max-width: 560px;
+        line-height: 28px;
+        font-weight: 300;
+      }
+
+      .cta {
+        background-color: white;
+        color: #a384ff;
+        border: none;
+        border-radius: 100px;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 10px 24px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        width: 150px;
+      }
+
+      .cta:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(163, 132, 255, 0.5);
+      }
+
+      /* Video */
+      .video-section video {
+        width: 100%;
+        border-radius: 12px;
+        margin-top: 40px;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+      }
+
+      /* Contributors */
+      .contributors {
+        margin-top: 60px;
+        text-align: center;
+      }
+
+      .contributors h3 {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+      }
+
+      .roles {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        font-size: 0.95rem;
+      }
+
+      .role {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        color: #ccc;
+      }
+
+      .role a {
+        color: #fff;
+        text-decoration: none;
+      }
     </style>
   </head>
 
@@ -180,7 +254,7 @@
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="206"
-          height="56"
+          height="29"
           viewBox="0 0 103 28"
         >
           <g>
@@ -194,128 +268,129 @@
         </svg>
       </a>
     </div>
-    <h1 class="avatar-title">Avatar FX</h1>
+    <div class="title">Avatar FX</div>
+    <p class="subtitle">
+      Avatar FX is a novel AI-powered platform for interactive storytelling that
+      lets users upload an image and choose a voice to instantly animate
+      characters—speaking, moving, and expressing emotions with unprecedented
+      realism.
+    </p>
+    <p class="description">
+      At its core is our state-of-the-art DiT-based diffusion video generation
+      model, trained on a curated dataset and enhanced with innovative
+      distillation and inference techniques to deliver high-quality, temporally
+      coherent videos at rapid speeds, even for extended sequences.
+    </p>
+    <a href="#" class="cta">Try it on c.ai</a>
 
     <div class="authors">
-      <p>
-        <strong>Project Lead:</strong
+      <p class="role">
+        <strong>Project Lead</strong
         ><a href="https://linkedin.com/in/weimin-wang-will" target="_blank"
           >Weimin Wang</a
         >
       </p>
-      <p>
-        <strong>Modeling:</strong
-        ><a href="https://www.linkedin.com/in/chetwin-low-061975193/"
-          >Chetwin Low</a
-        >,
-        <a href="https://linkedin.com/in/weimin-wang-will">Weimin Wang</a>
+      <p class="role">
+        <strong>Modeling</strong
+        ><span
+          ><a href="https://www.linkedin.com/in/chetwin-low-061975193/"
+            >Chetwin Low</a
+          >,
+          <a href="https://linkedin.com/in/weimin-wang-will">Weimin Wang</a>
+        </span>
       </p>
-      <p>
-        <strong>Data:</strong
-        ><a href="https://www.linkedin.com/in/nathaniel-roth-ba470148/"
-          >Nat Roth</a
-        >,
-        <a href="https://www.linkedin.com/in/diegodelatorre650/"
-          >Diego De La Torre</a
-        >, <a href="https://www.linkedin.com/in/michalwolski/">Michal Wolski</a>
+      <p class="role">
+        <strong>Data</strong
+        ><span
+          ><a href="https://www.linkedin.com/in/nathaniel-roth-ba470148/"
+            >Nat Roth</a
+          >,
+          <a href="https://www.linkedin.com/in/diegodelatorre650/"
+            >Diego De La Torre</a
+          >,
+          <a href="https://www.linkedin.com/in/michalwolski/">Michal Wolski</a>
+        </span>
       </p>
-      <p>
-        <strong>Deployment & Infra:</strong
-        ><a href="https://www.linkedin.com/in/yi-cui-234627a7/">Yi Cui</a>,
-        <a href="https://www.linkedin.com/in/amogkamsetty/">Amog Kamsetty</a>,
-        <a href="https://www.linkedin.com/in/meng-zhu/">Meng Zhu</a>
+      <p class="role">
+        <strong>Deployment & Infra</strong>
+        <span
+          ><a href="https://www.linkedin.com/in/yi-cui-234627a7/">Yi Cui</a>,
+          <a href="https://www.linkedin.com/in/amogkamsetty/">Amog Kamsetty</a>,
+          <a href="https://www.linkedin.com/in/meng-zhu/">Meng Zhu</a></span
+        >
       </p>
-      <p>
-        <strong>Front End:</strong
+      <p class="role">
+        <strong>Front End</strong
         ><a href="https://www.linkedin.com/in/ryder-donahue/">Ryder Donahue</a>
       </p>
-      <p>
-        <strong>Back End:</strong
-        ><a href="https://www.linkedin.com/in/lanyin-z-1a3097b4/">Lanyin Zhang</a>
+      <p class="role">
+        <strong>Back End</strong
+        ><a href="https://www.linkedin.com/in/lanyin-z-1a3097b4/"
+          >Lanyin Zhang</a
+        >
       </p>
-      <p>
-        <strong>Design:</strong
+      <p class="role">
+        <strong>Design</strong
         ><a href="https://www.linkedin.com/in/evancoutre/">Evan Coutre</a>
       </p>
-      <p><strong>Trust & Safety:</strong
+      <p class="role">
+        <strong>Trust & Safety</strong
         ><a href="https://www.linkedin.com/in/techybo/">Bo Jin</a>
       </p>
     </div>
 
-    <div class="links">
-      <a class="button" href="https://video.c.ai">Try it on c.ai</a>
-    </div>
-
-    <section class="intro">
-      <p>
-        Avatar FX is a novel AI-powered platform for interactive storytelling
-        that lets users upload an image and choose a voice to instantly animate
-        characters—speaking, moving, and expressing emotions with unprecedented
-        realism. At its core is our state-of-the-art DiT-based diffusion video
-        generation model, trained on a curated dataset and enhanced with
-        innovative distillation and inference techniques to deliver
-        high-quality, temporally coherent videos at rapid speeds, even for
-        extended sequences.
-      </p>
-    </section>
-
-    <!-- Featured Videos -->
-    <div class="section-title">Featured</div>
+    <!-- Featured Video -->
+    <div class="video-section">Long, consistent video</div>
     <div class="video-row">
-    <div class="video-container">
-        <video class="featured-video" controls>
-        <source
-            src="static/videos/featured/101.mp4"
-            type="video/mp4"
-        />
+      <video class="featured-video" controls>
+        <source src="static/videos/featured/101.mp4" type="video/mp4" />
         <!-- fallback text -->
         Your browser doesn’t support HTML5 video.
-        </video>
-    </div>
+      </video>
     </div>
 
-    <div class="section-title">Long Videos</div>
+    <div class="video-section">Long Videos</div>
     <div class="video-row">
-    <div class="video-container">
+      <div class="video-container">
         <video class="featured-video" controls>
-        <source
+          <source
             src="static/videos/long video generation/2.mp4"
             type="video/mp4"
-        />
-        Your browser doesn’t support HTML5 video.
+          />
+          Your browser doesn’t support HTML5 video.
         </video>
-    </div>
-    <div class="video-container">
+      </div>
+      <div class="video-container">
         <video class="featured-video" controls>
-        <source
+          <source
             src="static/videos/long video generation/101.mp4"
             type="video/mp4"
-        />
-        Your browser doesn’t support HTML5 video.
+          />
+          Your browser doesn’t support HTML5 video.
         </video>
-    </div>
-    <div class="video-container">
+      </div>
+      <div class="video-container">
         <video class="featured-video" controls>
-        <source
+          <source
             src="static/videos/long video generation/3.mp4"
             type="video/mp4"
-        />
-        Your browser doesn’t support HTML5 video.
+          />
+          Your browser doesn’t support HTML5 video.
         </video>
-    </div>
-    <div class="video-container">
+      </div>
+      <div class="video-container">
         <video class="featured-video" controls>
-        <source
+          <source
             src="static/videos/long video generation/102.mov"
             type="video/mp4"
-        />
-        Your browser doesn’t support HTML5 video.
+          />
+          Your browser doesn’t support HTML5 video.
         </video>
-    </div>
+      </div>
     </div>
 
     <!-- Singing Videos -->
-    <div class="section-title">Singing</div>
+    <div class="video-section">Singing</div>
     <div class="video-row">
       <div class="video-container">
         <video controls>
@@ -330,7 +405,7 @@
     </div>
 
     <!-- Realistic Videos -->
-    <div class="section-title">Realistic</div>
+    <div class="video-section">Realistic</div>
     <div class="video-row">
       <div class="video-container">
         <video controls>
@@ -389,9 +464,8 @@
       </div>
     </div>
 
-
     <!-- Unreal Videos -->
-    <div class="section-title">Unreal</div>
+    <div class="video-section">Unreal</div>
     <div class="video-row">
       <div class="video-container">
         <video controls>
@@ -489,21 +563,5 @@
         </video>
       </div>
     </div>
-
-    
-
-      <script>
-    // for each .video-container, grab its <source> path, extract the filename, and insert a label
-    document.querySelectorAll('.video-container').forEach(container => {
-      const src = container.querySelector('video source')?.getAttribute('src') || '';
-      const filename = src.split('/').pop() || '';
-      if (filename) {
-        const label = document.createElement('div');
-        label.className = 'video-filename';
-        label.textContent = filename;
-        container.insertBefore(label, container.firstChild);
-      }
-    });
-  </script>
-</body>
+  </body>
 </html>
